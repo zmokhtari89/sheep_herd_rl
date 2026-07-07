@@ -13,11 +13,11 @@ class SingleAgentWrapper(gym.Env):
         self.env = env
         self.num_agents = env.num_agents
         
-        # Each agent observes 5 features
+        # Each agent observes 1 feature: food level at its own cell
         self.observation_space = spaces.Box(
             low=0,
             high=env.max_food + 1,
-            shape=(5,),
+            shape=(1,),
             dtype=np.float32
         )
         
